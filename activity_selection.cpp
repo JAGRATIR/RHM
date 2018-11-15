@@ -1,6 +1,3 @@
-
-// C++ program for activity selection problem 
-// when input activities may not be sorted. 
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -9,16 +6,12 @@ struct Activitiy
 { 
     int start, finish; 
 }; 
-  
-// A utility function that is used for sorting 
-// activities according to finish time 
+   
 bool activityCompare(Activitiy s1, Activitiy s2) 
 { 
     return (s1.finish < s2.finish); 
 } 
   
-// Returns count of the maximum set of activities that can 
-// be done by a single person, one at a time. 
 void printMaxActivities(Activitiy arr[], int n) 
 { 
     // Sort jobs according to finish time 
@@ -33,9 +26,7 @@ void printMaxActivities(Activitiy arr[], int n)
     // Consider rest of the activities 
     for (int j = 1; j < n; j++) 
     { 
-      // If this activity has start time greater than or 
-      // equal to the finish time of previously selected 
-      // activity, then select it 
+      
       if (arr[j].start >= arr[i].finish) 
       { 
           cout << "(" << arr[j].start << ", "
@@ -44,8 +35,6 @@ void printMaxActivities(Activitiy arr[], int n)
       } 
     } 
 } 
-  
-// Driver program 
 int main() 
 { 
     Activitiy arr[] = {{5, 9}, {1, 2}, {3, 4}, {0, 6}, 
